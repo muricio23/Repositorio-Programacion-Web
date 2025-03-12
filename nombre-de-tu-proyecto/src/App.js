@@ -1,51 +1,38 @@
-// Importamos el logo y el archivo CSS
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-// Este código comentado define un componente de ejemplo llamado App.
-// Puedes descomentarlo si deseas usarlo en lugar del componente actual.
-/*
-function App() {
+function MyButton({ count, onClick, label }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-*/
-
-// Definimos un componente funcional llamado MyButton que muestra un botón
-function MyButton() {
-  return (
-    <button>
-      Soy un botón
+    <button onClick={onClick} className="button">
+      {label} {count !== undefined ? `(${count} clics)` : ''}
     </button>
   );
 }
 
-// Definimos otro componente funcional principal llamado MyApp
 export default function MyApp() {
+  const [sharedCount, setSharedCount] = useState(0);
+  const [independentCount, setIndependentCount] = useState(0);
+
+  function handleSharedClick() {
+    setSharedCount(sharedCount + 1);
+  }
+
+  function handleIndependentClick() {
+    setIndependentCount(independentCount + 1);
+  }
+
   return (
-    <div>
-      <h1>Bienvenido a mi aplicación</h1>
-      {/* Llamamos al componente MyButton aquí */}
-      <MyButton />
+    <div className="container">
+      <h1>Contadores con React</h1>
+      
+      <img src="https://static.vecteezy.com/system/resources/previews/018/813/672/non_2x/cute-robot-waving-hand-cartoon-science-technology-concept-isolated-flat-cartoon-style-vector.jpg" alt="Imagen centrada" className="centered-image" />
+      
+      <div className="button-group">
+        <MyButton label="Clic Compartido 1" onClick={handleSharedClick} count={sharedCount} />
+        <MyButton label="Clic Compartido 2" onClick={handleSharedClick} count={sharedCount} />
+      </div>
+      
+      <MyButton label="Clic Independiente" onClick={handleIndependentClick} count={independentCount} className="independent-button" />
     </div>
   );
 }
-
-// Nota: Eliminamos la declaración duplicada de `export default App`
-// Si necesitas usar `App`, descomenta la primera función `App` y exporta solo esa.
