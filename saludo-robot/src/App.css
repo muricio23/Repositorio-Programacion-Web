@@ -1,19 +1,22 @@
+/* Definimos variables CSS globales para colores */
 :root {
-  --primary-color: #007bff;
-  --hover-color: #0056b3;
-  --border-color: #ccc;
+  --primary-color: #007bff; /* Color principal usado en botones u otros elementos */
+  --hover-color: #0056b3; /* Color utilizado al pasar el mouse sobre elementos interactivos */
+  --border-color: #ccc; /* Color para bordes de elementos (como tablas o contenedores) */
 }
 
+/* Estilos generales del cuerpo */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  margin: 0; /* Eliminamos márgenes predeterminados del navegador para un diseño limpio */
+  font-family: Arial, sans-serif; /* Establecemos la fuente del texto a Arial como predeterminada */
 }
 
+/* Estilo para los botones */
 .button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 5px;
+  padding: 10px 20px; /* Añadimos un relleno interno: 10px vertical y 20px horizontal */
+  font-size: 16px; /* Tamaño de fuente de 16px para el texto del botón */
+  background-color: var(--primary-color); /* Usamos el color primario definido en las variables globales */
+  color: white; /* El texto del botón será blanco */
+  border: none; /* Eliminamos cualquier borde predeterminado del botón */
+  border-radius: 5px; /* Bordes redondeados con un radio de 5px para un diseño más suave */
 }

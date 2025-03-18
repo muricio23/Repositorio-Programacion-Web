@@ -1,23 +1,25 @@
+/* Estilo del tablero */
 .tablero {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-gap: 5px;
-  }
-  
-  .casilla {
-    width: 100px;
-    height: 100px;
-    font-size: 2em;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--border-color);
-    background-color: #e0f2e0;
-    cursor: pointer;
-  }
-  
-  .casilla:hover {
-    background-color: #c2e6c2;
-  }
-  
+  display: grid; /* Usamos un modelo de diseño CSS Grid para crear una cuadrícula */
+  grid-template-columns: repeat(3, 100px); /* Creamos tres columnas con un ancho fijo de 100px cada una */
+  grid-gap: 5px; /* Agregamos un espacio de 5px entre las celdas de la cuadrícula */
+}
+
+/* Estilo de cada casilla en el tablero */
+.casilla {
+  width: 100px; /* Ancho fijo de 100px para cada casilla */
+  height: 100px; /* Alto fijo de 100px para que las casillas sean cuadradas */
+  font-size: 2em; /* Tamaño grande del texto para los símbolos 'X' y 'O' */
+  text-align: center; /* Centramos el texto horizontalmente */
+  display: flex; /* Usamos flexbox para centrar el contenido */
+  align-items: center; /* Centramos verticalmente el contenido dentro de la casilla */
+  justify-content: center; /* Centramos horizontalmente el contenido dentro de la casilla */
+  border: 1px solid var(--border-color); /* Añadimos un borde con un color definido como variable CSS */
+  background-color: #e0f2e0; /* Fondo de color verde claro */
+  cursor: pointer; /* Cambiamos el cursor a una mano para indicar que es interactivo */
+}
+
+/* Efecto hover al pasar el mouse sobre una casilla */
+.casilla:hover {
+  background-color: #c2e6c2; /* Cambiamos a un verde ligeramente más oscuro para resaltar la interacción */
+}
