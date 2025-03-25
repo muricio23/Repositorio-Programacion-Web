@@ -2,9 +2,20 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Espacio inferior para separación */
+}
+
+.left-section, .center-section, .right-section {
+  width: 30%; /* Cada sección ocupa el 30% del ancho del contenedor */
+  text-align: center; /* Centra el contenido dentro de las columnas */
+}
+
+.center-section img {
+  max-width: 100%; /* Ajusta el tamaño de la imagen */
+  height: auto;
 }
 
 .container {
@@ -15,7 +26,7 @@
 }
 
 .centered-image {
-  width: 300px;
+  width: 300px; /* Tamaño específico para la imagen */
   height: auto;
   margin: 20px 0;
 }
@@ -30,12 +41,6 @@
 
 .independent-button {
   margin-top: 20px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -60,4 +65,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo adicional para asegurar que el botón no esté oculto */
+.left-section button {
+  margin-top: 10px;
+  display: block;
 }
